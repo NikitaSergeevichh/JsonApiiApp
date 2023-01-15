@@ -2,38 +2,30 @@
 {
     public class ServiceConvertDistance
     {
-        public double UnitOutput { get; set; }//Выводимая величина
-        public double UnitInput { get; set; }//Вводимая величина
-
-        //Перевод вводимой величины в метры
+        public double UnitOutput { get; set; }
+        public double UnitInput { get; set; }        
         public void ToMeter(string NameUnit, double number)
         {
             switch (NameUnit)
             {
-                case "Meter":
+                case "M":
                     UnitInput = number * 1;
                     break;
-
-                case "Kilometer":
+                case "Km":
                     UnitInput = number * 1000;
                     break;
-
-                case "Milimeter":
+                case "Mm":
                     UnitInput = number / 1000;
                     break;
-
-                case "Centimeter":
+                case "Cm":
                     UnitInput = number / 100;
                     break;
-
-                case "Yards":
-                    UnitInput = number * 1.09361;
+                case "Yard":
+                    UnitInput = number * 1.093;
                     break;
-
                 case "lb.":
-                    UnitInput = number * 3.28084;
+                    UnitInput = number * 3.280;
                     break;
-
                 default:
                     break;
             }
@@ -42,30 +34,24 @@
         {
             switch (UnitNameOutput)
             {
-                case "Meter":
+                case "M":
                     return UnitInput * 1;
                     break;
-
-                case "Kilometer":
+                case "Km":
                     return UnitInput / 1000;
                     break;
-
-                case "Milimeter":
+                case "Mm":
                     return UnitInput * 1000;
                     break;
-
-                case "Centimeter":
+                case "Cm":
                     return UnitInput * 100;
                     break;
-
-                case "Yards":
+                case "Yard":
                     return UnitInput / 1.09361;
                     break;
-
                 case "lb.":
                     return UnitInput / 3.28084;
                     break;
-
                 default:
                     return 0;
                     break;
